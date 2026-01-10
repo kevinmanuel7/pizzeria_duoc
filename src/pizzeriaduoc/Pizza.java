@@ -4,17 +4,17 @@ public class Pizza {
     private String nombre;
     private String tamanio;
     private String masa;
-    private int precio = 2000;
+    private int precioBase;
 
     public Pizza() {
     }
 
     
-    public Pizza(String nombre, String tamanio, String masa, int precio) {
+    public Pizza(String nombre, String tamanio, String masa, int precioBase) {
         this.nombre = nombre;
         this.tamanio = tamanio;
         this.masa = masa;
-        this.precio = precio;
+        this.precioBase = precioBase;
     }
 
     public String getNombre() {
@@ -41,12 +41,12 @@ public class Pizza {
         this.masa = masa;
     }
 
-    public int getPrecio() {
-        return precio;
+    public int getPrecioBase() {
+        return precioBase;
     }
 
     public void setPrecio(int precio) {
-        this.precio = precio;
+        this.precioBase = precio;
     }
 
     public void mostrardetalle() {
@@ -54,7 +54,7 @@ public class Pizza {
             System.out.println("Nombre: " + this.nombre);
             System.out.println("Tamaño: " + this.tamanio);
             System.out.println("Masa: " + this.masa);
-            System.out.println("Precio: " + this.precio);
+            System.out.println("Precio Base: " + this.precioBase);
     }
     
     public void preparando() {
@@ -62,22 +62,19 @@ public class Pizza {
     }
         
     public void calentando() {
-        System.out.println("Calentando " + this.nombre);
+        System.out.println("La pizza " + this.nombre + " está en el horno.");
     }
     
     public int calcularprecio() {
-        if (this.tamanio.equalsIgnoreCase("M")) {
-            return this.precio;
-        }
         if (this.tamanio.equalsIgnoreCase("L")){
-            this.precio += 2000;
-            return this.precio;
+            return this.precioBase + 2000;
         }
-        if (this.tamanio.equalsIgnoreCase("XL")){
-            this.precio += 4000;
-            return this.precio;
+        else if (this.tamanio.equalsIgnoreCase("XL")){
+            return this.precioBase + 4000;
         }
-        return 0;
+        else {
+            return this.precioBase;
+        }
     }
 }
 
