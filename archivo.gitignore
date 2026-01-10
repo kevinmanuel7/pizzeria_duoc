@@ -1,0 +1,10 @@
+# Carpetas de compilación
+build/
+dist/
+nbdist/
+
+# Configuración personal de NetBeans
+nbproject/private/
+
+# Archivos del sistema Mac
+.DS_Store
