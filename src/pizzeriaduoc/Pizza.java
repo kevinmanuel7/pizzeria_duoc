@@ -76,5 +76,28 @@ public class Pizza {
             return this.precioBase;
         }
     }
+    
+    public void procesarDatosPizza() {
+        String precio = String.valueOf(precioBase); //convertir int a String
+        System.out.println(precio);
+        
+        int precioint = Integer.parseInt(precio); //convertir String a int
+        System.out.println(precioint);
+        
+        double preciodouble = precioint; //conversión int a double (implícita o widening)
+        System.out.println(precioint);
+        
+        String preciostring = String.valueOf(preciodouble);//convertir de double a String
+        System.out.println(preciostring);
+        
+        char tamaniochar = this.tamanio.charAt(0);//Convertir "Tamanio" a char
+        System.out.println(tamaniochar);
+        
+        boolean escara = this.calcularprecio() > 10000;//boolean
+        System.out.println("¿Es cara?: " + escara);
+        
+        
+    }
+    
 }
 

@@ -7,37 +7,22 @@ public class PizzeriaDuoc {
 
     public static void main(String[] args) {
         
-        Pizza pizzapepperoni = new Pizza(); 
-        pizzapepperoni.setNombre("Pepperoni");
-        pizzapepperoni.setTamanio("XL");
-        pizzapepperoni.setMasa("delgada");
-        pizzapepperoni.setPrecio(10000);
+        Pedido miPedido = new Pedido(false);
         
+        Pizza pizzapepperoni = new Pizza("Pepperoni", "XL", "Delgada", 10000); 
         pizzapepperoni.mostrardetalle();
+        miPedido.agregarPizza(pizzapepperoni);
         
-        pizzapepperoni.preparando();
-        System.out.println("Precio final: " + pizzapepperoni.getNombre() + " $" + pizzapepperoni.calcularprecio());
+        Pizza pizzanapo = new Pizza("Napolitana ", "L", "Gruesa", 8000);
+        pizzanapo.mostrardetalle();
+        miPedido.agregarPizza(pizzanapo);
         
+        Cliente kevin = new Cliente("Kevin Maturana", miPedido);
+
+        kevin.mostrarResumen(kevin);
         
-        System.out.println("====================");
-        
-        
-        Pizza pizzanapolitana = new Pizza("Napolitana", "L", "Gruesa", 8000);
-        
-        pizzanapolitana.mostrardetalle();
-        pizzanapolitana.calentando();
-        System.out.println("Precio final: " + pizzanapolitana.getNombre() + " $" + pizzanapolitana.calcularprecio());
-        
-        
-        System.out.println("====================");
-        
-        
-        Pizza pizzavegan = new Pizza("Vegana", "M", "Gruesa", 8000);
-        
-        pizzavegan.mostrardetalle();
-        pizzavegan.calentando();
-        System.out.println("Precio Final: " + pizzavegan.getNombre() + " $" + pizzavegan.calcularprecio());
-        
+        System.out.println("===========================");
+        pizzanapo.procesarDatosPizza();
     }
 
 }
